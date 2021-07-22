@@ -1,0 +1,24 @@
+package com.kh.test.model;
+
+import java.util.List;
+
+public class TestDao {
+	
+	public List<Test> selectList(){
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("01. 드라이버 연결");
+		} catch (ClassNotFoundException e) {
+			System.out.println("01. 드라이버 연결 실패");
+			e.printStackTrace();
+		}
+		
+		String DbUrl = "jdbc:oracle:thin:@192.168.10.3:1521:xe";
+		String DbUsername = "kh";
+		String DbPassword
+		
+		
+		
+		return null;
+	}
+}
