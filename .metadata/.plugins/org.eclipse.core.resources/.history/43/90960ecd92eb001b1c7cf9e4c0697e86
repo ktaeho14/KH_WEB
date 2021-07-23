@@ -1,0 +1,59 @@
+package com.my.dao;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.my.dto.MyBoardDto;
+
+
+public class MyBoardDao extends SqlMapConfig {
+	
+	//전체출력
+	public List<MyBoardDto> selectAll(){
+		List<MyBoardDto> list = new ArrayList<MyBoardDto>();
+		
+		SqlSession session = null;
+		//import org.apache.ibatis.session.SqlSession;
+		
+		session = getSqlSessionFactory().openSession();
+		
+		
+		return null;
+	}
+	
+	//선택출력
+	public MyBoardDto selectOne(int myno) {
+		
+		return null;
+	}
+	
+	
+	//추가
+	public int insert(MyBoardDto dto) {
+		
+		return 0;
+	}
+	
+	//수정
+	public int update(MyBoardDto dto) {
+		
+		return 0;
+	}
+	
+	//삭제
+	public int delete(int myno) {
+		
+		return 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

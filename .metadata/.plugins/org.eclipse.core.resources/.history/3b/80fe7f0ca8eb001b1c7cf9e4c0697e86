@@ -1,0 +1,80 @@
+package com.multi.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.text.html.HTMLDocument.HTMLReader.PreAction;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.multi.dto.MDBoardDto;
+
+import common.JDBCTemplate;
+
+public class MDBoardDao_old extends JDBCTemplate{
+	private String namespace = "com.my.multi.";
+	
+	
+	
+	//게시판 목록
+	public List<MDBoardDto> selectAll() extends SqlMapConfig{
+		List<MDBoardDto> res = null;
+		SqlSession session =null;
+		
+		session = getSqlSessionFactory();
+		
+		
+		
+		
+		return null;
+	}
+	
+	//글 선택
+	public MDBoardDto selectOne(int seq) {
+		
+		
+		
+		
+		return null;
+	}
+	
+	//글 작성
+	public int insert(MDBoardDto dto) {
+		
+		
+		return 0;
+	}
+	
+	//글 수정
+	public int update(MDBoardDto dto) {
+		
+		return 0;
+	}
+	
+	//글 삭제
+	public int delete(int seq) {
+		
+		return 0;
+	}
+	
+	
+	public int MultiDelete(String[] seq) {
+		
+		
+		return 0;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

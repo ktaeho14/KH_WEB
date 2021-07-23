@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+  
+  <configuration>
+  	<properties resource="db/db.properties"/>
+  	
+  	<typeAlias type="com.multi.dto.MDBoardDto" alials="MDBoardDto"/>
+	</typeAlias>  	
+  	
+  
+  </configuration>

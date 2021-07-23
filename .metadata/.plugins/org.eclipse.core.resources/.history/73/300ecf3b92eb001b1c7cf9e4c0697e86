@@ -1,0 +1,21 @@
+package com.my.dao;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+public class SqlMapConfig {
+	private SqlSessionFactory sqlSessionFactory;
+	
+	
+	public SqlSessionFactory getSqlSessionFactory() {
+		//Config.xml의 경로
+		String resource = "db/Config.xml";
+		
+		Reader reader = Resources.getResourceAsReader(resource);
+		
+	return sqlSessionFactory;
+	}
+	
+}

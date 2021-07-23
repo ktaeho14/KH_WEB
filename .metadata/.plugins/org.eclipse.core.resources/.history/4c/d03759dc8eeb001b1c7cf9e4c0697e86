@@ -1,0 +1,135 @@
+package com.my.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.my.dto.MyBoardDto;
+
+//Dao는 DB와 연결을 하는 역할을 수행 한다. (JDBC)
+public class MyBoardDao {
+	
+
+	
+	//드라이버 등록 및 연결
+	
+	
+	//전체출력
+	public List<MyBoardDto> selectAll(){
+		
+		
+		
+		
+		
+		return null;
+	}
+	
+	//선택출력
+	public MyBoardDto selectOne(int myno) {
+		
+		return null;
+	}
+	
+	
+	//추가
+	public int insert(MyBoardDto dto) {
+		
+		
+		
+		
+		
+		return null;
+	}
+	
+	//수정
+	public int update(MyBoardDto dto) {
+		try {
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","KH","KH");
+			System.out.println("02. 계정 연결");
+		} catch (SQLException e) {
+			System.out.println("02. 계정 연결 실패");
+			e.printStackTrace();
+		}
+		
+		PreparedStatement pstm = null;
+		int res = 0;
+		String sql ="UPDATE MYBOARD SET MYTITLE=?,MYCONTENT=? WHERE MYNO=?";
+		
+		try {
+			pstm = con.prepareStatement(sql);
+			pstm.setString(1, dto.getMytitle());
+			pstm.setString(2, dto.getMycontent());
+			pstm.setInt(3, dto.getMyno());
+			System.out.println("03. query 준비 + sql");
+			
+			res = pstm.executeUpdate();
+			System.out.println("04. query 실행 및 리턴");
+		} catch (SQLException e) {
+			System.out.println("3/4 단계 오류");
+			e.printStackTrace();
+		} finally {
+			try {
+				pstm.close();
+				con.close();
+				System.out.println("05. db 종료\n");
+			} catch (SQLException e) {
+				System.out.println("05. db 종료 오류");
+				e.printStackTrace();
+			}
+			
+		}
+		return res;
+	}
+	
+	//삭제
+	public int delete(int myno) {
+		try {
+			con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","KH","KH");
+			System.out.println("02. 계정 연결");
+		} catch (SQLException e) {
+			System.out.println("02. 계정 연결 실패");
+			e.printStackTrace();
+		}
+		
+		PreparedStatement pstm = null;
+		int res = 0;
+		String sql = "DELETE FROM MYBOARD WHERE MYNO=?";
+		
+		try {
+			pstm = con.prepareStatement(sql);
+			pstm.setInt(1, myno);
+			System.out.println("03. query 준비: "+sql);
+			
+			res = pstm.executeUpdate();
+			System.out.println("04. query 실행 및 리턴");
+		} catch (SQLException e) {
+			System.out.println("3/4 단계 오류");
+			e.printStackTrace();
+		}finally {
+			try {
+				pstm.close();
+				con.close();
+				System.out.println("05. db 종료");
+			} catch (SQLException e) {
+				System.out.println("05. db 종료 오류");
+				e.printStackTrace();
+			}
+			
+		}
+		return res;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

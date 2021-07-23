@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 해당 파일은 Config파일입니다를 명시한다. -->
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- db 접속 정보 파일 경로(db.properties) -->
+	<properties resource="db/db.properties"/>
+	
+	<!-- typeAlias -->
+	<typeAliases>
+		<typeAlias type="com.my.dto.MyBoardDto" alias="MyBoardDto"/>
+	</typeAliases>
+	
+	<!-- db 접속 설정 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+				<dataSource type="POOLED">
+					<property name="driver" value="${driver}"/>
+					<property name="url" value="${url}"/>
+					<property name="username" value="${username}"/>
+					<property name="password" value="${password}"/>
+				</dataSource>
+		</environment>
+	</environments>
+	
+	
+	<!-- Mapper 경로 -->
+	<mappers> <!-- mappers이기 때문에 mapper파일을 미리 올려두고 경로를 지정해서 잡아준다. -->
+		<mapper resource="db/Mapper.xml"/>
+		<mapper resource="db/Mapper2.xml"/>
+	</mappers>
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+</configuration>

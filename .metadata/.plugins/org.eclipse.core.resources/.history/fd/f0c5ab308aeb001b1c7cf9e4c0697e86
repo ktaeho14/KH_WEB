@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<!-- db 접속 정보 파일 경로(db.properties) -->
+	<properties resource="db/db.properties"/>
+	
+	<!-- typeAlias -->
+	<typeAliases>
+		<typeAlias type="com.my.dto.MyBoardDto" alias="MyBoardDto"/>
+	</typeAliases>
+	
+	
+	
+	
+	
+
+
+</configuration>
